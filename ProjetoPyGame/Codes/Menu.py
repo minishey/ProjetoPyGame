@@ -17,6 +17,7 @@ class Menu:
         while True:
             self.screen_Surface.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "Project", (213, 59, 175), ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, "PyGame", (213, 59, 175), ((WIN_WIDTH / 2), 70))
 
             pygame.display.flip()
 
