@@ -1,10 +1,9 @@
 import sys
-
 import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from Codes.Const import WIN_WIDTH, COLOR_RED, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW
+from Const import WIN_WIDTH, COLOR_RED, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW
 
 
 class Menu:
@@ -31,9 +30,21 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.key == pygame.KEYDOWN:  # testar se alguma tecla for pressionada
+                    if event.key == pygame.K_DOWN:  # se a tecla seta para baixo for pressionada
+                        if menu_option < len(MENU_OPTION) - 1:
+                            menu_option += 1
+                        else:
+                            menu_option = 0
+                    if event.key == pygame.K_UP:  # se a tecla seta para cima for pressionada
+                        if menu_option > 0:
+                            menu_option -= 1
+                        else:
+                            menu_option = len(MENU_OPTION) - 1
+                    if event.key == pygame.K_RETURN:
+                        return MENU_OPTION[menu_option]
 
-
-            pygame.display.flip()
+              pygame.display.flip()
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=text_size)

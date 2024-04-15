@@ -1,9 +1,7 @@
 import pygame as pygame
-from pygame import Surface, Rect
-from pygame.font import Font
 
-from Codes.Const import WIN_WIDTH, WIN_HEIGHT
-from Codes.Menu import Menu
+from Const import WIN_WIDTH, WIN_HEIGHT
+from Menu import Menu
 
 
 class Game:
@@ -17,5 +15,4 @@ class Game:
             menu = Menu(self.screen_Surface)
 
             menu.run()
-
 
