@@ -1,8 +1,10 @@
+import sys
+
 import pygame as pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from Codes.Const import WIN_WIDTH, WIN_HEIGHT
+from Codes.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
 from Codes.Menu import Menu
 
 
@@ -15,5 +17,10 @@ class Game:
 
         while True:
             menu = Menu(self.screen_Surface)
+            menu_return = menu.run()
 
-            menu.run()
+            if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
+                pass
+            else:
+                pygame.quit()
+                sys.exit()
