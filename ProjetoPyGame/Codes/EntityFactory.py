@@ -7,6 +7,5 @@ class EntityFactory:
     def get_entity(entity_name: str, position: tuple):
         match entity_name:
             case 'Level1':
-                Backgroud(f'Level1', position)
-        pass
-
+                return Backgroud(f'Level1', position)
+      
