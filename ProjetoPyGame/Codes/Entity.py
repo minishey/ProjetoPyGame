@@ -8,7 +8,9 @@ class Entity(ABC):
         self.name = name
         self.surf = pygame.image.load('./asset' + name + '.png')
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
-
-    def move(self, ):
+        self.speed = 0
+        
+    @abstractmethod
+    def move(self):
         pass
 
