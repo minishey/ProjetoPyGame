@@ -2,9 +2,11 @@
 #-*- coding: utf-8 -*-
 
 class EntityFactory:
-    def __init__(self):
-        pass
-
-    def get_entity(self, entity_type):
+    
+    @staticmethod
+    def get_entity(entity_name: str, position: tuple):
+        match entity_name:
+            case 'Level1':
+                Backgroud(f'Level1', position)
         pass
 
