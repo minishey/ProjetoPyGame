@@ -1,10 +1,8 @@
 import sys
 
 import pygame as pygame
-from pygame import Surface, Rect
-from pygame.font import Font
-
 from Codes.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
+from Codes.Level import Level
 from Codes.Menu import Menu
 
 
@@ -20,7 +18,8 @@ class Game:
             menu_return = menu.run()
 
             if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
-                pass
+                level = Level(self.screen_Surface, 'Level1', menu_return)
+                level_return = level.run()
             else:
                 pygame.quit()
                 sys.exit()
