@@ -6,6 +6,6 @@ class Level:
         self.entity_list = name
         self.mode = menu_option  # Opção do menu
         self.entity_list: list[Entity] = []
-
+        self.entity_list.append(EntityFactory.get_entity('Level1', (0, 0)))
     def run(self, ):
         pass
