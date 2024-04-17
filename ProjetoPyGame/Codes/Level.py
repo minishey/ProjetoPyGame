@@ -7,5 +7,10 @@ class Level:
         self.mode = menu_option  # Opção do menu
         self.entity_list: list[Entity] = []
         self.entity_list.append(EntityFactory.get_entity('Level1', (0, 0)))
+    
+    
     def run(self, ):
+        while True: 
+            for ent in self.entity_list:
+                
         pass
